@@ -66,9 +66,11 @@ def draw_box_plot():
     df_box['year'] = [d.year for d in df_box.date]
     df_box['month'] = [d.strftime('%b') for d in df_box.date]
 
-    month_order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+    month_order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    df_box['month'] = pd.Categorical(df_box['month'], categories=month_order, ordered=True)
+    df_box['month'] = pd.Categorical(df_box['month'],
+                                     categories=month_order,
+                                     ordered=True)
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
 
